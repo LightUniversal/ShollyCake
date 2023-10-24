@@ -38,8 +38,12 @@ const Header = () => {
     <header className=" bg-white header position-fixed shadow-sm z-2 " style={{width:"100%"}}>
       <Navbar  style={{backgroundColor: "black"}} variant="dark" expand="md" collapseOnSelect>
         <Container className=" py-2 px-3">
-          <LinkContainer to="/" style={{ width:"100px", cursor:"pointer"}}>
-            <img src="/images/elogo.png" alt="" className="" />
+          <LinkContainer to="/" style={{ width:"100px", cursor:"pointer"}} className="relative mt-2">
+            {/* <img src="/images/elogo.png" alt="" className="" /> */}
+            <h2 className=" text-white ">
+            ShollyCakes
+
+            </h2>
           </LinkContainer>
           <Navbar.Toggle
             aria-controls="basic-navbar"
