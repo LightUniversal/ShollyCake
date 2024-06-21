@@ -35,13 +35,12 @@ const Header = () => {
   };
   // console.log(cartItems);
   return (
-    <header className=" bg-white header position-fixed shadow-sm z-2 " style={{width:"100%"}}>
+    <header className=" bg-black header position-fixed shadow-sm z-2" style={{width:"100%"}}>
       <Navbar  style={{backgroundColor: "black"}} variant="dark" expand="md" collapseOnSelect>
         <Container className=" py-2 px-3">
-          <LinkContainer to="/" style={{ width:"100px", cursor:"pointer"}} className="relative mt-2">
-            {/* <img src="/images/elogo.png" alt="" className="" /> */}
-            <h2 className=" text-white ">
-            ShollyCakes
+          <LinkContainer to="/" style={{ width:"100px", cursor:"pointer",color:"white"}}>
+          <h2 style={{color:"white !important"}}>
+            Proshop
 
             </h2>
           </LinkContainer>
@@ -56,7 +55,7 @@ const Header = () => {
                 <Nav.Link className=" text-white">
                   <FaShoppingCart /> Cart
                   {cartItems.length > 0 && (
-                    <Badge pill bg="success" style={{ marginLeft: "5px" }}>
+                    <Badge pill bg="primary" style={{ marginLeft: "5px" }}>
                       {cartItems.reduce((a, c) => a + c.qty, 0)}
                     </Badge>
                   )}

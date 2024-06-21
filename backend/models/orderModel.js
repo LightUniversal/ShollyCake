@@ -33,22 +33,15 @@ const orderSchema = mongoose.Schema({
     },
   ],
   shippingAddress: {
-    department: {
+    location: {
       type: String,
       required: true,
     },
-    city: {
-      type: String,
+    tell: {
+      type: Number,
       required: true,
     },
-    level: {
-      type: String,
-      required: true,
-    },
-    semester: {
-      type: String,
-      required: true,
-    },
+    
   },
   paymentMethod: {
     type: String,

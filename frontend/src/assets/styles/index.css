@@ -159,22 +159,17 @@ main {
 
 @media (max-width: 760px) {
   .nav {
-    /* border-top: thin solid rgba(205,205,205,0.3); */
+    border-top: thin solid rgba(205,205,205,0.3);
     margin-top: 15px;
-    padding: 5px 10px;
-    background-color: rgba(104, 101, 101, 0.3);
+    padding: 20px 20px;
+    background-color: rgba(104, 101, 101, 0.2);
+
     position: relative;
     z-index: 2000;
-    border-radius: 3px;
+    border-radius: 10px;
   }
   .body {
     border-top: none !important;
   }
-  .time {
-    width: 100% !important;
-    color: rgb(240, 255, 255);
-    box-shadow: rgba(176, 176, 176, 0.1) 0px 1px 0px 0px;
-    border-radius: 0% !important;
-    text-align: center;
-  }
+  
 }

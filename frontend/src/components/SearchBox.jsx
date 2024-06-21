@@ -19,10 +19,10 @@ const SearchBox = () => {
     }
 
   return <Form onSubmit={ submitHandler } className="d-flex">
-    <Form.Control type="text" name="q" onChange={(e) => setKeyword(e.target.value)} value={keyword} className="mr-sm-2 ml-sm-5 shadow-sm " placeholder="Search Questions..."  style={{border:"thin solid rgba(10, 10, 10,0.00)"}}>
+    <Form.Control type="text" name="q" onChange={(e) => setKeyword(e.target.value)} value={keyword} className="mr-sm-2 ml-sm-5 shadow-sm search px-3 border bg-body-secondary rounded-5 text-black" placeholder="Search Product..."  style={{border:"thin solid rgba(150, 150, 50,0.3)", backgroundColor:"rgba(0,0,0,0.8) !important"}}>
     </Form.Control>
-    <Button type="submit" variant="outline-dark" className="p-2 mx-2 text-white bg-primary shadow rounded-1" style={{border:"thin solid rgba(150, 150, 50,0.0)"}}>
-        Search 
+    <Button type="submit" variant="outline-dark" className="px-4 rounded-5 bg-primary d-flex align-items-center gap-2 mx-2 text-white shadow rounded-1" style={{border:"thin solid rgba(150, 150, 50,0.3)"}}>
+        Search <FaSearch />
     </Button>
   </Form>;
 };

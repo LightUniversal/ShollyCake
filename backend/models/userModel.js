@@ -25,18 +25,9 @@ const userSchema = mongoose.Schema({
         required : true,
         default : false
     },
-    friends: {
-        type: Array,
-        default: []
-    },
-    department: {
-        type: String,
-        required: true
-    },
-    faculty: {
-        type: String,
-        required: true
-    }
+    
+    
+    
 }, {
     timestamps : true
 })

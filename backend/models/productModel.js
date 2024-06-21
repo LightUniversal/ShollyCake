@@ -1,23 +1,6 @@
 import mongoose from "mongoose";
 
-const questionSchema = new mongoose.Schema({
-  question: {
-    type: String,
-    required: true,
-  },
-  options: {
-    type: Array,
-    required: true,
-  },
-  answer: {
-    type: String,
-    required: true,
-  },
-  solution: {
-    type: String,
-    required: true,
-  },
-});
+
 const reviewSchema = new mongoose.Schema(
   {
     user: {
@@ -64,12 +47,11 @@ const productSchema = new mongoose.Schema(
       required: true,
       default: 0,
     },
-    courseOutline: {
+    description: {
       type: String,
       required: true,
     },
     reviews: [reviewSchema],
-    questions: [questionSchema],
     rating: {
       type: Number,
       required: true,

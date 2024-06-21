@@ -36,13 +36,13 @@ const getPaidProduct = asyncHandler(async (req, res) => {
 })
 const createProduct = asyncHandler(async (req, res) => {
   const product = new Product({
-    name: "Subject Name",
+    name: "Product Name",
     user: req.user._id,
     price: 0,
     image: "/images/physics.jpg",
     countInStock: 0,
     numReviews: 0,
-    courseOutline: "Sample Course Outline",
+    description: "Sample Product Description",
   });
   const createdProduct = await product.save();
   res.status(201).json(createdProduct);

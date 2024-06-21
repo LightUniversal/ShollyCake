@@ -52,10 +52,10 @@ const CartScreen = () => {
                     <Image src={item.image} alt={item.name} fluid rounded />
                   </Col>
                   <Col md={3}>
-                    <Link to={`/product/${item._id}`}>{item.name}</Link>
+                    <Link style={{ textDecoration: "none", fontWeight:"600"}} to={`/product/${item._id}`}>{item.name}</Link>
                   </Col>
                   <Col md={2}>
-                    <p className="text-white bg-dark w-25 text-center px-1 py-2 rounded-1 shadow-sm ">&#x20A6;{item.price}</p>
+                    <p style={{ textDecoration: "none", fontWeight:"600"}} className="text-white bg-success  text-center px-1 py-2 rounded-1 shadow-sm ">&#x20A6;{item.price}</p>
                   </Col>
                   <Col md={2}>
                     <Form.Control

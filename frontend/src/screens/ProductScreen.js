@@ -115,12 +115,12 @@ const ProductScreen = () => {
       ) : (
         <>
         <Meta title={product.name} />
-          <Link to="/" className="btn btn-light my-2  text-white bg-danger   py-2 rounded-1">
+          <Link to="/" className="btn btn-light my-2  text-white bg-black   py-2 rounded-1">
             <FaArrowCircleLeft /> Back
           </Link>
           <Row>
             <Col md={5} className=" ">
-              <Image src={product.image} alt={product.name} fluid />
+              <Image src={product.image} alt={product.name} fluid className=" rounded-2" />
             </Col>
             <Col md={4}>
               <ListGroup variant="flush">
@@ -135,7 +135,7 @@ const ProductScreen = () => {
                 </ListGroup.Item>
                 
                 <ListGroup.Item className=" fw-medium">
-                  <h4 className=" d-inline-block py-2 ">Product-Description :</h4> {product.courseOutline}
+                  <h4 className=" d-inline-block py-2 ">Product-Description :</h4> {product.description}
                 </ListGroup.Item>
               </ListGroup>
             </Col>
@@ -188,7 +188,7 @@ const ProductScreen = () => {
                   )}
                   <ListGroup.Item>
                     <Button
-                      className=" border-0 py-2 bg-success rounded-1"
+                      className=" border-0 py-2 bg-primary rounded-1"
                       type="button"
                       disabled={product.countInStock === 0}
                       onClick={addToCartHandler}
@@ -227,7 +227,6 @@ const ProductScreen = () => {
                           value={rating}
                           onChange={(e) => setRating(Number(e.target.value))}
                         >
-                          <option value="">Select...</option>
                           <option value="1">1 - Poor</option>
                           <option value="2">2 - Fair</option>
                           <option value="3">3 - Good</option>

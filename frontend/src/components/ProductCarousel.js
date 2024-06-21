@@ -15,9 +15,9 @@ const ProductCarousel = () => {
         <Carousel.Item key={material._id}>
           <Link to={`/product/${material._id}`}>
             <Image src={material.image} alt={material.name} width="100%" className="" style={{marginBottom:"100px"}} />
-            <Carousel.Caption className=" carousel-caption ">
+            <Carousel.Caption className=" carousel-caption " style={{background:"rgba(0,0,00.6)"}}>
               <h3 className="px-3 mt-2">
-                {material.name} (&#x20A6;{material.price})
+                {material.name} <span className="" style={{color: "green"}}>(&#x20A6;{material.price})</span>
               </h3>
               
             </Carousel.Caption>

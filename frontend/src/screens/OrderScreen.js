@@ -46,7 +46,7 @@ const OrderScreen = () => {
       const loadPayPalScript = async () => {
         paypalDispatch({
           type: "resetOptions",
-          value: {
+          value: { 
             "client-id": paypal.clientId,
             currency: "USD",
           },
@@ -108,21 +108,19 @@ const OrderScreen = () => {
           <ListGroup>
             <ListGroup.Item className="my-2">
               <p className="px-2 border-bottom">
-                <h6>Department: {order.shippingAddress.department}</h6>
-                <h6>Location: {order.shippingAddress.city}</h6>
-                <h6>Level: {order.shippingAddress.level + " "}</h6>
-                <h6>Semester: {order.shippingAddress.semester}</h6>
+                <h6>Location: {order.shippingAddress.location}</h6>
+                <h6>Phone Number: {order.shippingAddress.tell}</h6>
               </p>
               {order.isPaid ? (
                 <Link
                   className=" bg-success  text-white px-3 py-2 my-1 text-decoration-none shadow-sm rounded-1 "
                   to={`/profile`}
                 >
-                  View Question
+                  View Product
                 </Link>
               ) : (
                 <p className=" bg-danger-subtle  text-white px-3 py-3 rounded-2 ">
-                  No Question Yet
+                  No Product Yet
                 </p>
               )}
             </ListGroup.Item>

@@ -79,127 +79,96 @@ const RegisterScreen = () => {
   return (
     <div>
       <FormContainer>
-        {/* <h1 className=" shadow-sm p-2 rounded-1 ">
-          Lupedia/Examhub <FaGraduationCap className=" text-success " />
-        </h1> */}
-        <Form onSubmit={submitHandler} className=" shadow-sm p-1 rounded-1 ">
-          <Form.Group
-            controlId="name"
-            className="my-0 px-2 py-2 rounded-1  "
-          >
-            <Form.Label className="shadow-sm px-2 py-2 rounded-0">
-              Name <FaUserPlus className=" text-success " />
+        <Form onSubmit={submitHandler} className=" p-1 ">
+        <Form.Group controlId="name" className="my-3">
+            <Form.Label className="text-black">
+              Name <FaUserPlus className=" text-primary " />
             </Form.Label>
             <Form.Control
               type="text"
+              style={{ background:"rgba(220,220,225,0.3)" }}
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Enter your name"
-              className=" p-2 rounded-0 "
+              className="py-3 btn-outline-none border-primary text-white px-4 border-none rounded-5"
             ></Form.Control>
           </Form.Group>
-          <Form.Group
-            controlId="email"
-            className="my-1 px-2 py-2 rounded-1"
-          >
-            <Form.Label className="shadow-sm px-2 py-2 rounded-0">
-              Email Address <FaAddressBook className=" text-success " />
+          <Form.Group controlId="email" className="my-3">
+            <Form.Label className=" text-black">
+              Email Address{" "}
+              <FaAddressBook className=" text-primary rounded-5 border-1 p-0.5 border-black  " />
             </Form.Label>
             <Form.Control
+              style={{ background:"rgba(220,220,225,0.3)" }}
               type="email"
+              className="py-3 btn-outline-none border-primary text-white px-4 border-none rounded-5"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter email"
-              className="p-2 rounded-0 "
             ></Form.Control>
           </Form.Group>
-          <Form.Group
-            controlId="faculty"
-            className="my-1 px-2 py-2 rounded-1"
-          >
-            <Form.Label className="shadow-sm px-2 py-2 rounded-0">
-              Faculty <FaBuilding className=" text-success " />
-            </Form.Label>
-            <Form.Control
-              type="text"
-              value={faculty}
-              onChange={(e) => setFaculty(e.target.value)}
-              placeholder="Enter your faculty"
-              className="p-2 rounded-0 "
-            ></Form.Control>
-          </Form.Group>
-          <Form.Group
-            controlId="department"
-            className="my-1 px-2 py-2 rounded-1"
-          >
-            <Form.Label className="shadow-sm px-2 py-2 rounded-0">
-              Department <FaSchool className=" text-success " />
-            </Form.Label>
-            <Form.Control
-              type="text"
-              value={department}
-              onChange={(e) => setDepartment(e.target.value)}
-              placeholder="Enter your department"
-              className="p-2 rounded-0 "
-            ></Form.Control>
-          </Form.Group>
+         
+          
+            
           <Form.Group
             controlId="imgurl"
             className="my-1 px-2 py-2 rounded-1"
           >
-            <Form.Label className="shadow-sm px-2 py-2 rounded-0">
+            <Form.Label className="">
               Profile Image <FaImage className=" text-success " />
             </Form.Label>
             <Form.Control
               type="text"
               value={imageUrl}
               onChange={(e) => setImgUrl(e.target.value)}
-              className="p-2 my-1  rounded-0"
+              style={{ background:"rgba(220,220,225,0.3)"}}
+            className="py-3 border-1 border-primary text-white rounded-5 px-4"
               placeholder="Enter image url"
             ></Form.Control>
             <Form.Control
               type="file"
               label = "Choose file"
               onChange={uploadFileHandler}
-              className="p-2 rounded-0"
+              style={{ background:"rgba(220,220,225,0.3)"}}
+            className="py-3 mt-2 border-1 border-primary text-black rounded-5 px-4"
             ></Form.Control>
             
           </Form.Group>
-          <Form.Group
-            controlId="password"
-            className="my-1  px-2 py-2 rounded-1"
-          >
-            <Form.Label className="shadow-sm px-2 py-2 rounded-0">
-              Password <FaLock className=" text-success" />
+          <Form.Group controlId="password" className="my-2">
+            <Form.Label className="text-black">
+              Password <FaLock className=" text-primary  rounded-5 border-1 p-0.5 border-black" />
             </Form.Label>
             <Form.Control
               type="password"
+              style={{ background:"rgba(220,220,225,0.3)"}}
+            className="py-3 mt-2 border-1 border-primary text-black rounded-5 px-4"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter password"
-              className="p-2 rounded-0 "
             ></Form.Control>
           </Form.Group>
           <Form.Group
             controlId="confirmpassword"
             className="my-1 px-2 py-2 rounded-1"
           >
-            <Form.Label className="shadow-sm px-2 py-2 rounded-0">
-              Confirm Password <FaLock className=" text-success " />
+            <Form.Label className="text-black">
+              Confirm Password <FaLock className=" text-primary  rounded-5 border-1 p-0.5 border-black" />
             </Form.Label>
             <Form.Control
+              style={{ background:"rgba(220,220,225,0.3)"}}
+            className="py-3 mt-2 border-1 border-primary text-black rounded-5 px-4"
               type="password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="Enter password"
-              className="p-2 rounded-0 "
+
             ></Form.Control>
           </Form.Group>
 
           <Button
             type="submit"
             variant="success"
-            className="my-3 mx-2 rounded-1 "
+            className="my-3 text-white bg-primary rounded-5 px-3 py-2"
             disabled={isLoading}
           >
             Register <FaUserPlus className="" />
@@ -211,8 +180,8 @@ const RegisterScreen = () => {
           <Col>
             {/* after the registering, the user is redirected to the value of the redirect variable */}
             Already have an account?
-            <Link to={redirect ? `/login?redirect=${redirect}` : "/login"}>
-              Login <FaSignInAlt className=" text-primary " />
+            <Link className=" mx-2" to={redirect ? `/login?redirect=${redirect}` : "/login"}>
+              Login <FaSignInAlt className=" text-primary" />
             </Link>
           </Col>
         </Row>

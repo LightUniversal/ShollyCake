@@ -13,10 +13,8 @@ const ShippingScreen = () => {
 
   //   check if the shippingAddress exits
 
-  const [department, setDepartment] = useState(shippingAddress?.department || '');
-  const [level, setLevel] = useState(shippingAddress?.level || "");
-  const [city, setCity] = useState(shippingAddress?.city || "");
-  const [semester, setSemester] = useState(shippingAddress?.semester || '');
+  const [location, setLocation] = useState(shippingAddress?.location || '');
+  const [tell, setTell] = useState(shippingAddress?.tell || "");
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -25,10 +23,8 @@ const ShippingScreen = () => {
     e.preventDefault();
     dispatch(
       saveShippingAddress({
-        department,
-        city,
-        level,
-        semester,
+        location,
+        tell,
       })
     );
     navigate("/payment");
@@ -40,40 +36,25 @@ const ShippingScreen = () => {
       <h1>Details</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group controlId="address" className="my-2">
-          <Form.Label>Department</Form.Label>
+          <Form.Label>Location</Form.Label>
           <Form.Control
             type="text"
-            value={department}
-            onChange={(e) => setDepartment(e.target.value)}
-            placeholder="Enter Your Department"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            placeholder="Enter Your Location"
           ></Form.Control>
         </Form.Group>
         <Form.Group controlId="level" className="my-2">
-          <Form.Label>Level</Form.Label>
+          <Form.Label>Phone Number</Form.Label>
           <Form.Control
             type="text"
-            value={level}
-            onChange={(e) => setLevel(e.target.value)}
-            placeholder="Enter Your Level"
-          ></Form.Control>
-        </Form.Group>
-        <Form.Group controlId="city" className="my-2">
-          <Form.Label>City</Form.Label>
-          <Form.Control
-            type="text"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            placeholder="Enter City"
+            value={tell}
+            onChange={(e) => setTell(e.target.value)}
+            placeholder="Enter Your Phone Number"
           ></Form.Control>
         </Form.Group>
         <Form.Group controlId="semester" className="my-2">
-          <Form.Label>Semester</Form.Label>
-          <Form.Control
-            type="text"
-            value={semester}
-            onChange={(e) => setSemester(e.target.value)}
-            placeholder="Enter semester"
-          ></Form.Control>
+          
           <Button variant="primary" className="my-2" type="submit">
             Continue <FaArrowCircleRight />
           </Button>

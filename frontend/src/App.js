@@ -9,17 +9,17 @@ import "@fontsource/poppins/400.css"; // Specify weight
 import "@fontsource/poppins/400-italic.css";
 const App = () => {
   return (
-    <>
+    <div className="">
       <Header />
       <main className="py-3" style={{position:"relative", top:"80px"}}>
         <Container>
-          <Outlet />
+          <Outlet />  
           {/* Renders the child route's element, if there is one. */}
         </Container>
       </main>
       <Footer />
       <ToastContainer />
-    </>
+    </div>
   );
 };
 
